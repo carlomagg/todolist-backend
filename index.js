@@ -1,9 +1,11 @@
 const express = require('express');
+const cors = require('cors'); // Import the cors package
 const sqlite3 = require('sqlite3').verbose();
 const app = express();
 const port = 3000;
 
 app.use(express.json());
+app.use(cors()); // Use the cors middleware
 
 // Connect to the SQLite database
 const db = new sqlite3.Database('tasks.db');
